@@ -1,0 +1,12 @@
+target_files = [
+  "/var/log/apache2/access.log"
+]
+
+modules = [
+  "CountByDatetimeModule",
+  "CountByHostModule"
+]
+
+[range]
+  min = "2020/04/30"
+  max = ""
