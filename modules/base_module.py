@@ -1,7 +1,8 @@
 from abc import abstractmethod, ABCMeta
 
+
 class BaseModule(object):
-    __metaclass__  = ABCMeta
+    __metaclass__ = ABCMeta
 
     @abstractmethod
     def process(self, log_data: dict):

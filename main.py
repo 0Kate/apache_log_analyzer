@@ -1,5 +1,4 @@
 import sys
-from importlib import import_module
 
 import toml
 
@@ -7,7 +6,8 @@ import modules
 from lib.apache_log_analyzer import ApacheLogAnalyzer
 
 
-DEFAUT_LOG_FORMAT = '%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\"'
+DEFAUT_LOG_FORMAT = \
+    '%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\"'
 # DEFAUT_LOG_FORMAT = ''
 
 

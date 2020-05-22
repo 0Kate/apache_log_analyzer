@@ -6,12 +6,16 @@ from modules import CountByHostModule
 
 
 class TestCountByHostModule(unittest.TestCase):
+    """Test CountByHostModule.
+    """
     TEST_LOG_FILE_PATH = 'tests/test.log'
-    TEST_LOG_FORMAT = '%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\"'
+    TEST_LOG_FORMAT = \
+        '%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\"'
 
     def setUp(self):
         self.module = CountByHostModule()
-        self.parser = apache_log_parser.make_parser(self.__class__.TEST_LOG_FORMAT)
+        self.parser = \
+            apache_log_parser.make_parser(self.__class__.TEST_LOG_FORMAT)
 
     def test_process(self):
         with open(self.__class__.TEST_LOG_FILE_PATH) as fp:

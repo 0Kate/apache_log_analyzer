@@ -1,6 +1,4 @@
-from collections import defaultdict
 from datetime import datetime
-from pprint import pprint
 from typing import List
 
 import apache_log_parser

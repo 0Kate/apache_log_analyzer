@@ -5,8 +5,11 @@ from modules import CountByDatetimeModule
 
 
 class TestApacheLogAnalyzer(unittest.TestCase):
+    """Test ApacheLogAnalyzer.
+    """
     TEST_LOG_FILE_PATH = 'tests/test.log'
-    TEST_LOG_FORMAT = '%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\"'
+    TEST_LOG_FORMAT = \
+        '%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\"'
 
     def setUp(self):
         self.analyzer = ApacheLogAnalyzer(
