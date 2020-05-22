@@ -1,6 +1,7 @@
 import unittest
 
 from lib.apache_log_analyzer import ApacheLogAnalyzer
+from modules import CountByDatetimeModule
 
 
 class TestApacheLogAnalyzer(unittest.TestCase):
@@ -9,6 +10,19 @@ class TestApacheLogAnalyzer(unittest.TestCase):
 
     def setUp(self):
         self.analyzer = ApacheLogAnalyzer(
-            self.__class__.TEST_LOG_FILE_PATH,
+            [self.__class__.TEST_LOG_FILE_PATH],
             self.__class__.TEST_LOG_FORMAT
         )
+        self.analyzer.add_module(CountByDatetimeModule)
+
+    def test_process(self):
+        results = self.analyzer.process()
+        expected_result = (
+            'CountByDatetimeModule:\n'
+            '[Results]:\n'
+            '09: 1\n'
+            '10: 1\n'
+            '12: 1\n'
+            '[Errors]:\n'
+        )
+        self.assertEqual(results[0], expected_result)

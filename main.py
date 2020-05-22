@@ -8,6 +8,7 @@ from lib.apache_log_analyzer import ApacheLogAnalyzer
 
 
 DEFAUT_LOG_FORMAT = '%h %l %u %t \"%r\" %>s %b \"%{Referer}i\" \"%{User-Agent}i\"'
+# DEFAUT_LOG_FORMAT = ''
 
 
 def main():
@@ -29,7 +30,9 @@ def main():
         analyzer.add_module(module_class)
 
     results = analyzer.process()
-    print(results)
+    for result in results:
+        print(result)
+        print('\n' + '=' * 100 + '\n')
 
 
 if __name__ == '__main__':

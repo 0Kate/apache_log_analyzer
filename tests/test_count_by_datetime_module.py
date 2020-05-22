@@ -20,9 +20,9 @@ class TestCountByDatetimeModule(unittest.TestCase):
                 self.module.process(log_data)
 
         expect_result = {
-            '2020/05/20 09': 1,
-            '2020/05/20 10': 1,
-            '2020/05/20 12': 1,
+            '09': 1,
+            '10': 1,
+            '12': 1,
         }
 
         self.assertEqual(dict(self.module.result), expect_result)

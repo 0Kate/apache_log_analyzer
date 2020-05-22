@@ -13,11 +13,16 @@ MODULE_CODE_TEMPLATE = \
 
 
 class %s(BaseModule):
-    def __init__(self, config: dict = {}):
-        self.config = config
+    def __init__(self):
         self.result = {}
 
-    def process(self, log_data):
+    def process(self, log_data: dict):
+        ...
+
+    def error_line(self, line_num: int, exc: Exception):
+        ...
+
+    def output(self):
         ...
 '''
 
