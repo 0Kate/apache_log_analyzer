@@ -1,7 +1,8 @@
 ## apache_log_analyzer
+> extendable and reusable analyzer.
 
 ### Setup
-- If you haven't pipenv, please intall pipenv like this.
+- If you haven't pipenv, you need intall pipenv like this.
 > install pipenv and dependenciees 
 
 ```
@@ -31,7 +32,7 @@ $ pipenv run test
 > target of files (List)
 
 - modules
-> applyed modules (List)
+> modules to apply (List)
 
 - range
 > range of date to analyze (Table)
